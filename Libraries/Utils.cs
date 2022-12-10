@@ -3,6 +3,17 @@ namespace Libraries;
 public static class Utils
 {
 
+   public static string GetFolderPath()
+   {
+      string? input = "";
+      while (string.IsNullOrEmpty(input))
+      {
+         Console.Write("Enter the directory path: ");
+         input = Console.ReadLine();
+      }
+      return input;
+   }
+
    public static bool CheckIsDirectory(string path)
    {
       FileAttributes attr = File.GetAttributes(path);

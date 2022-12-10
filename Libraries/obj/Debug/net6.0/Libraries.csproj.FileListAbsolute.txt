@@ -1,0 +1,12 @@
+C:\Programming\working-with-files-cs-homework\Libraries\bin\Debug\net6.0\Libraries.deps.json
+C:\Programming\working-with-files-cs-homework\Libraries\bin\Debug\net6.0\Libraries.dll
+C:\Programming\working-with-files-cs-homework\Libraries\bin\Debug\net6.0\Libraries.pdb
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\Libraries.csproj.AssemblyReference.cache
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\Libraries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\Libraries.AssemblyInfoInputs.cache
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\Libraries.AssemblyInfo.cs
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\Libraries.csproj.CoreCompileInputs.cache
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\Libraries.dll
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\refint\Libraries.dll
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\Libraries.pdb
+C:\Programming\working-with-files-cs-homework\Libraries\obj\Debug\net6.0\ref\Libraries.dll

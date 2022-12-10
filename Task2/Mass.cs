@@ -28,7 +28,7 @@ internal static class Mass
       return size;
    }
 
-   private static void CalculateFolders(string path)
+   private static long CalculateFolders(string path)
    {
       string[] folders = Directory.GetDirectories(path);
       if (folders.Length <= 0) { return 0; }
