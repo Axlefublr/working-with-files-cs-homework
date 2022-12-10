@@ -1,15 +1,42 @@
+using System.IO;
 using Libraries;
 
 namespace Task2;
 
-internal static class Mass {
+internal static class Mass
+{
 
-   internal static void Calculate(string path) {
-      if (!Utils.CheckFolderPath(path)) { return; }
-      if (Utils.CheckIsDirectory(path)) {
+   internal static long Calculate(string path)
+   {
+      if (!Utils.CheckFolderPath(path)) { return 0; }
+      long size = 0;
+      size += CalculateFiles(path);
+      size += CalculateFolders(path);
+      return size;
+   }
 
-      } else {
-
+   private static long CalculateFiles(string path)
+   {
+      string[] files = Directory.GetFiles(path);
+      if (files.Length <= 0) { return 0; }
+      long size = 0;
+      foreach (string file in files)
+      {
+         FileInfo currFile = new(file);
+         size += currFile.Length;
       }
+      return size;
+   }
+
+   private static void CalculateFolders(string path)
+   {
+      string[] folders = Directory.GetDirectories(path);
+      if (folders.Length <= 0) { return 0; }
+      long size = 0;
+      foreach (string folder in folders)
+      {
+         size += Calculate(folder);
+      }
+      return size;
    }
 }
