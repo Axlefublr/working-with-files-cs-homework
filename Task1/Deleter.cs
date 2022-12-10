@@ -13,6 +13,18 @@ internal static class Deleter
       }
       return true;
    }
+   
+   private static void CheckTime(string path) {
+      
+   }
+   
+   private static bool CheckIsDirectory(string path) {
+      FileAttributes attr = File.GetAttributes(path);
+      if (attr.HasFlag(FileAttributes.Directory))
+         return true;
+      else
+         return false;
+   }
 
    internal static void DeleteEverythingInside(string folderPath)
    {
