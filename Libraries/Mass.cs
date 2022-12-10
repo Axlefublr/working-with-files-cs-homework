@@ -3,10 +3,10 @@ using Libraries;
 
 namespace Task2;
 
-internal static class Mass
+public static class Mass
 {
 
-   internal static long Calculate(string path)
+   public static long Calculate(string path)
    {
       if (!Utils.CheckFolderPath(path)) { return 0; }
       long size = 0;
