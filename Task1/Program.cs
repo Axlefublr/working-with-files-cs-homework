@@ -5,7 +5,7 @@ internal class Program
 {
    private static void Main(string[] args)
    {
-      Deleter.DeleteEverythingInside(Test.CreateTree());
+      Deleter.DeleteEverythingInside(GetFolderPath());
    }
    
    private static string GetFolderPath() {
