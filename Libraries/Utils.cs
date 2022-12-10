@@ -12,4 +12,14 @@ public static class Utils
          return false;
    }
 
+   public static bool CheckFolderPath(string folderPath)
+   {
+      if (!Directory.Exists(folderPath))
+      {
+         Console.WriteLine("Folder with the path of: '" + folderPath + "' does not exist");
+         return false;
+      }
+      return true;
+   }
+
 }

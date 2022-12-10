@@ -6,16 +6,6 @@ namespace Task1;
 internal static class Deleter
 {
 
-   private static bool CheckFolderPath(string folderPath)
-   {
-      if (!Directory.Exists(folderPath))
-      {
-         Console.WriteLine("Folder with the path of: '" + folderPath + "' does not exist");
-         return false;
-      }
-      return true;
-   }
-
    private static DateTime GetLastAccessTime(string path)
    {
       DateTime lastAccessTime;
@@ -47,7 +37,7 @@ internal static class Deleter
 
    internal static void DeleteEverythingInside(string folderPath)
    {
-      if (!CheckFolderPath(folderPath)) { return; }
+      if (!Utils.CheckFolderPath(folderPath)) { return; }
       DeleteFilesInFolder(folderPath);
       DeleteFoldersInFolder(folderPath);
    }
