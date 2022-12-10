@@ -58,6 +58,9 @@ internal static class Deleter
       if (folders.Length <= 0) {
       }
       foreach (string folder in folders) {
+         if (!CheckTime(folder)) { //If we accessed the parent folder, we accessed the child files and folders as well
+            continue;
+         }
          DeleteEverythingInside(folder);
          Directory.Delete(folder);
       }
@@ -69,6 +72,9 @@ internal static class Deleter
          return;
       }
       foreach (string file in files) {
+         if (!CheckTime(file)) {
+            continue;
+         }
          File.Delete(file);
       }
    }
