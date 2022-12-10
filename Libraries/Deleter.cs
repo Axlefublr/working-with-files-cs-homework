@@ -35,14 +35,14 @@ public static class Deleter
       }
    }
 
-   internal static void DeleteEverythingInside(string folderPath)
+   public static void DeleteEverythingInside(string folderPath)
    {
       if (!Utils.CheckFolderPath(folderPath)) { return; }
       DeleteFilesInFolder(folderPath);
       DeleteFoldersInFolder(folderPath);
    }
 
-   public static void DeleteFoldersInFolder(string folderPath)
+   private static void DeleteFoldersInFolder(string folderPath)
    {
       string[] folders = Directory.GetDirectories(folderPath);
       if (folders.Length <= 0)

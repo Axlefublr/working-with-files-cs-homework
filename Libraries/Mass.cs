@@ -1,7 +1,6 @@
 using System.IO;
-using Libraries;
 
-namespace Task2;
+namespace Libraries;
 
 public static class Mass
 {
