@@ -3,7 +3,7 @@ using System.IO;
 using Libraries;
 namespace Task1;
 
-internal static class Deleter
+public static class Deleter
 {
 
    private static DateTime GetLastAccessTime(string path)
@@ -42,7 +42,7 @@ internal static class Deleter
       DeleteFoldersInFolder(folderPath);
    }
 
-   private static void DeleteFoldersInFolder(string folderPath)
+   public static void DeleteFoldersInFolder(string folderPath)
    {
       string[] folders = Directory.GetDirectories(folderPath);
       if (folders.Length <= 0)

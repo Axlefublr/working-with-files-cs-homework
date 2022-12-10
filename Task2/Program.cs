@@ -1,10 +1,11 @@
-﻿namespace Task2;
+﻿using Libraries;
+namespace Task2;
 
 internal class Program
 {
    private static void Main(string[] args)
    {
-      long size = Mass.Calculate(@"C:/Programming");
-      Console.WriteLine(size);
+      long size = Mass.Calculate(Utils.GetFolderPath());
+      Console.WriteLine("The size of this folder is: " + size + " (in bytes)");
    }
 }
