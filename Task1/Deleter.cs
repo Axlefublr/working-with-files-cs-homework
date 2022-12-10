@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 namespace Task1;
 
@@ -14,8 +15,27 @@ internal static class Deleter
       return true;
    }
    
-   private static void CheckTime(string path) {
-      
+   private static DateTime GetLastAccessTime(string path) {
+      DateTime lastAccessTime;
+      if (CheckIsDirectory(path)) {
+         lastAccessTime = Directory.GetLastAccessTime(path);
+      }
+      else {
+         lastAccessTime = File.GetLastAccessTime(path);
+      }
+      return lastAccessTime;
+   }
+   
+   private static bool CheckTime(string path) {
+      DateTime lastAccessTime = GetLastAccessTime(path);
+      DateTime now = DateTime.Now;
+      TimeSpan difference = now - lastAccessTime;
+      if (difference.TotalMinutes > 30) {
+         return true;
+      }
+      else {
+         return false;
+      }
    }
    
    private static bool CheckIsDirectory(string path) {
