@@ -15,27 +15,32 @@ internal static class Deleter
       }
       return true;
    }
-   
-   private static DateTime GetLastAccessTime(string path) {
+
+   private static DateTime GetLastAccessTime(string path)
+   {
       DateTime lastAccessTime;
       if (Utils.CheckIsDirectory(path))
       {
          lastAccessTime = Directory.GetLastAccessTime(path);
       }
-      else {
+      else
+      {
          lastAccessTime = File.GetLastAccessTime(path);
       }
       return lastAccessTime;
    }
-   
-   private static bool CheckTime(string path) {
+
+   private static bool CheckTime(string path)
+   {
       DateTime lastAccessTime = GetLastAccessTime(path);
       DateTime now = DateTime.Now;
       TimeSpan difference = now - lastAccessTime;
-      if (difference.TotalMinutes > 30) {
+      if (difference.TotalMinutes > 30)
+      {
          return true;
       }
-      else {
+      else
+      {
          return false;
       }
    }
@@ -46,27 +51,35 @@ internal static class Deleter
       DeleteFilesInFolder(folderPath);
       DeleteFoldersInFolder(folderPath);
    }
-   
-   private static void DeleteFoldersInFolder(string folderPath) {
+
+   private static void DeleteFoldersInFolder(string folderPath)
+   {
       string[] folders = Directory.GetDirectories(folderPath);
-      if (folders.Length <= 0) {
+      if (folders.Length <= 0)
+      {
       }
-      foreach (string folder in folders) {
-         if (!CheckTime(folder)) { //If we accessed the parent folder, we accessed the child files and folders as well
+      foreach (string folder in folders)
+      {
+         if (!CheckTime(folder))
+         { //If we accessed the parent folder, we accessed the child files and folders as well
             continue;
          }
          DeleteEverythingInside(folder);
          Directory.Delete(folder);
       }
    }
-   
-   private static void DeleteFilesInFolder(string folderPath) {
+
+   private static void DeleteFilesInFolder(string folderPath)
+   {
       string[] files = Directory.GetFiles(folderPath);
-      if (files.Length <= 0) {
+      if (files.Length <= 0)
+      {
          return;
       }
-      foreach (string file in files) {
-         if (!CheckTime(file)) {
+      foreach (string file in files)
+      {
+         if (!CheckTime(file))
+         {
             continue;
          }
          File.Delete(file);
