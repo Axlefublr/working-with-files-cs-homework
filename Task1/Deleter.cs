@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Libraries;
 namespace Task1;
 
 internal static class Deleter
@@ -17,7 +18,8 @@ internal static class Deleter
    
    private static DateTime GetLastAccessTime(string path) {
       DateTime lastAccessTime;
-      if (CheckIsDirectory(path)) {
+      if (Utils.CheckIsDirectory(path))
+      {
          lastAccessTime = Directory.GetLastAccessTime(path);
       }
       else {
@@ -36,14 +38,6 @@ internal static class Deleter
       else {
          return false;
       }
-   }
-   
-   private static bool CheckIsDirectory(string path) {
-      FileAttributes attr = File.GetAttributes(path);
-      if (attr.HasFlag(FileAttributes.Directory))
-         return true;
-      else
-         return false;
    }
 
    internal static void DeleteEverythingInside(string folderPath)
